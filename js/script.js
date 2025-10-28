@@ -23,18 +23,31 @@
 //     }
 // }
 let risultato = 0
-for (let i = 1; i <= 100; i++) {
-    if (i % 3 == 0 && i % 5 == 0) {
+let limite = prompt("dammi un numero a tuo piacimento")
+for (let i = 1; i <= limite; i++) {
+    // if (i % 3 == 0 && i % 5 == 0) {
+    if (i % 15 == 0) {
         risultato = "FizzBuzz"
     }
     else if (i % 3 == 0) {
         risultato = "Fizz"
     }
-    else if (i % 5 == 0) {
+    else if (i % 5 == 0 && i % 100 != 0) {
         risultato = "Buzz"
+    }
+    else if (i % 100 == 0) {
+        risultato = "FizzBuzzPremium"
     }
     else {
         risultato = i
     }
-    console.log(risultato)
+    if (i % 100 == 0) {
+        console.error(risultato)
+    }
+    else if (i % 15 == 0) {
+        console.warn(risultato)
+    }
+    else {
+        console.log(risultato)
+    }
 }
